@@ -26,5 +26,5 @@ func _integrate_forces(state):
 		rotation_dir -= 1
 	if Input.is_action_pressed("ui_right"):
 		rotation_dir += 1
-	
 	applied_torque = rotation_dir * torque
+	
