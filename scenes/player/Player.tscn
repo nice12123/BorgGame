@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/player/Player.gd" type="Script" id=1]
+[ext_resource path="res://sprites/enterprise_sprite.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 46.8037, 12.258 )
+
+[node name="Ship" type="RigidBody2D"]
+position = Vector2( 975.786, 502.119 )
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.134041, 0.134041 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+build_mode = 1
+polygon = PoolVector2Array( 6.80347, -13.5394, 20.9776, -28.3434, 54.3655, -40.9427, 97.5178, -34.0131, 121.456, -4.40497, 105.707, 28.353, 70.1145, 41.5822, 30.1121, 35.9125, 6.17352, 15.1238, -5.16577, 29.9279, -24.3796, 37.4874, -121.393, 33.7076, -121.708, 29.2979, -65.957, 23.9433, -48.0031, 10.0842, -58.3975, 0.319763, -47.0581, -5.97986, -62.4922, -21.0989, -121.708, -27.3985, -120.764, -33.0682, -21.2297, -34.3281, -4.85077, -30.8633 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
