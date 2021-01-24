@@ -10,12 +10,13 @@ var torque = 200
 func _ready():
 	pass # Replace with function body.
 
+func _unhandled_key_input(event: InputEventKey) -> void:
+	if(event.is_action_pressed("torpedo")):
+		$TorpedoObject.shoot()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-
-
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	if Input.is_action_pressed("ui_up"):
 		applied_force = thrust.rotated(rotation)
 	else:

@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/enterprise_sprite.png" type="Texture" id=2]
+[ext_resource path="res://scenes/common/WrapAround.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/common/TorpedoObject.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/common/TorpedoObject.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46.8037, 12.258 )
 
 [node name="Ship" type="RigidBody2D"]
-position = Vector2( 975.786, 502.119 )
+position = Vector2( 880.736, 484.733 )
 gravity_scale = 0.0
 can_sleep = false
 script = ExtResource( 1 )
@@ -27,3 +30,9 @@ polygon = PoolVector2Array( 6.80347, -13.5394, 20.9776, -28.3434, 54.3655, -40.9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 1 )
+
+[node name="TorpedoObject" parent="." instance=ExtResource( 4 )]
+position = Vector2( 120, 0 )
+script = ExtResource( 6 )
+
+[node name="WrapAround" parent="." instance=ExtResource( 3 )]
